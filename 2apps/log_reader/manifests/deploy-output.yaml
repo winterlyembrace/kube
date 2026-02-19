@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: output-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: output-app
+  template:
+    metadata:
+      labels:
+        app: output-app
+    spec:
+      containers:
+        - name: output-app
+          image: winterlyembrace/log-output:v5
+
+    
